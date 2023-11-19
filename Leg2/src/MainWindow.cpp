@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     _layout -> addWidget(_labelimg);    // 将图片标签添加到布局管理器
 
     _labeltext -> setText("666");                     // 设置文本标签
-    _labelimg  -> setPixmap(QPixmap("/home/jiao/Desktop/A_Tour_of_Qt/Leg2/img/cqvie.jpg"));// 设置图片标签
+    _labelimg  -> setPixmap(QPixmap("./img/cqvie.jpg"));// 设置图片标签
 
     // 设置标签的对齐方式为居中
     _labeltext -> setAlignment(Qt::AlignCenter);
