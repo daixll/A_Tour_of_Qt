@@ -4,6 +4,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowTitle("Hello Qt!");
+    resize(800, 800);
 
     _layout         = new QVBoxLayout(this);
     _centralWidget  = new QWidget(this);
