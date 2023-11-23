@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = main1.0.0
-DISTDIR = /home/jiao/Desktop/A_Tour_of_Qt/Leg2/.tmp/main1.0.0
+DISTDIR = /home/jiao/workspace/A_Tour_of_Qt/Leg2/.tmp/main1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/QT/6.5.3/gcc_64/lib -Wl,-rpath-link,/QT/6.5.3/gcc_64/lib
 LIBS          = $(SUBLIBS) /QT/6.5.3/gcc_64/lib/libQt6Widgets.so /QT/6.5.3/gcc_64/lib/libQt6Gui.so /QT/6.5.3/gcc_64/lib/libQt6Core.so -lpthread -lGL   
@@ -1186,7 +1186,7 @@ moc_MainWindow.cpp: include/MainWindow.h \
 		/QT/6.5.3/gcc_64/include/QtGui/qtextdocument.h \
 		moc_predefs.h \
 		/QT/6.5.3/gcc_64/libexec/moc
-	/QT/6.5.3/gcc_64/libexec/moc $(DEFINES) --include /home/jiao/Desktop/A_Tour_of_Qt/Leg2/moc_predefs.h -I/QT/6.5.3/gcc_64/mkspecs/linux-g++ -I/home/jiao/Desktop/A_Tour_of_Qt/Leg2 -I/QT/6.5.3/gcc_64/include -I/QT/6.5.3/gcc_64/include/QtWidgets -I/QT/6.5.3/gcc_64/include/QtGui -I/QT/6.5.3/gcc_64/include/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/MainWindow.h -o moc_MainWindow.cpp
+	/QT/6.5.3/gcc_64/libexec/moc $(DEFINES) --include /home/jiao/workspace/A_Tour_of_Qt/Leg2/moc_predefs.h -I/QT/6.5.3/gcc_64/mkspecs/linux-g++ -I/home/jiao/workspace/A_Tour_of_Qt/Leg2 -I/QT/6.5.3/gcc_64/include -I/QT/6.5.3/gcc_64/include/QtWidgets -I/QT/6.5.3/gcc_64/include/QtGui -I/QT/6.5.3/gcc_64/include/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/MainWindow.h -o moc_MainWindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
