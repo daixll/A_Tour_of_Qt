@@ -20,5 +20,5 @@ private:
     QLineEdit   _input, _output;// 文本框
     QPushButton _button;        // 按钮
 
-    void _onButtonClicked();          // 按钮点击的槽函数
+    void _onButtonClicked();    // 按钮点击的槽函数
 };

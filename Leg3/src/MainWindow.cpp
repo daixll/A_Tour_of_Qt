@@ -25,8 +25,8 @@ void MainWindow::_onButtonClicked(){
         QMessageBox::warning(this, "警告", "输入不能为空");
         return;                     // 如果为空，弹出警告框
     }
-    
-    for (auto &c : input){           // 检测输入是否是小写字母
+
+    for (auto &c : input){          // 检测输入是否是小写字母
         if (c < 'a' || c > 'z'){    // 如果不是小写字母，弹出警告框
             QMessageBox::warning(this, "警告", "输入必须是小写字母");
             return;
