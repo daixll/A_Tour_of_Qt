@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QMainWindow>
-#include <QLabel>
 
 class MainWindow : public QMainWindow
 {
