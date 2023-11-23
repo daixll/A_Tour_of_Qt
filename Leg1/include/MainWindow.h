@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QLabel>
 
 class MainWindow : public QMainWindow   // 创建一个主窗口类
 {                                       // 继承自QMainWindow
@@ -12,4 +13,5 @@ public:
 
 private:
     // 在这里声明私有成员变量和私有方法
+    QLabel *_label;                     // 声明一个文本标签
 };

@@ -4,8 +4,7 @@
             "name": "Simple C++ QT Configuration",
             "includePath": [
                 "${workspaceFolder}/**",
-                "~/Qt/**",
-                "/Qt/**"
+                "/QT/**"
             ],
             "compilerPath": "/usr/bin/gcc"
         }
