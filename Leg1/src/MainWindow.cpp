@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) // 这里的parent是可选的
     // 在这里进行主窗口的初始化操作
     this -> setWindowTitle("Hello Qt!");// 设置窗口标题
     _label = new QLabel(this);          // 创建一个标签
-    _label -> setText("Hello Qt!!!");     // 设置标签的文本
+    _label -> setText("Hello Qt!!!");   // 设置标签的文本
 }
 
 MainWindow::~MainWindow()
