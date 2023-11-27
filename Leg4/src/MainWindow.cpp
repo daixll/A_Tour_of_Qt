@@ -5,12 +5,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     _centralWidget  = new QWidget(this);
     _gLayout        = new QGridLayout();
+    // 单选
     _vLayout        = new QVBoxLayout();
     _one_A          = new QRadioButton();
     _one_B          = new QRadioButton();
     _one_C          = new QRadioButton();
     _one_group      = new QButtonGroup();
     _one_res        = new QLabel();
+    // 复选
+    _vLayout2       = new QVBoxLayout();
+    _two_group      = new QButtonGroup();
+    _two_res        = new QLabel();
 
     setWindowTitle("Leg4 选择控件");
     setCentralWidget(_centralWidget);
@@ -40,6 +45,27 @@ MainWindow::MainWindow(QWidget *parent)
     // 设置单选按钮组的选择结果
     connect(_one_group, &QButtonGroup::buttonClicked, this, &MainWindow::_one_clicked);
 
+
+    // 将垂直布局添加到 [1,0]，标签添加到 [1,1]
+    _gLayout->addLayout(_vLayout2, 1, 0);
+    _gLayout->setAlignment(_vLayout2, Qt::AlignCenter);
+    _gLayout->addWidget(_two_res, 1, 1);
+    _gLayout->setAlignment(_two_res, Qt::AlignCenter);
+
+    for(int i = 0; i < 4; i++){
+        _two[i] = new QCheckBox();      // 创建复选按钮
+        _vLayout2->addWidget(_two[i]);  // 将复选按钮添加到垂直布局
+        _two_group->addButton(_two[i]); // 将复选按钮添加到复选按钮组
+    }
+
+    // 设置复选按钮的文本
+    _two[0]->setText("披萨");
+    _two[1]->setText("汉堡");
+    _two[2]->setText("薯条");
+    _two[3]->setText("热狗");
+
+    // 设置复选按钮组的选择结果
+    connect(_two_group, &QButtonGroup::buttonClicked, this, &MainWindow::_two_clicked);
 }
 
 void MainWindow::_one_clicked(){
@@ -50,6 +76,23 @@ void MainWindow::_one_clicked(){
     } else if(_one_C->isChecked()){
         _one_res->setPixmap(QPixmap("./img/mzd.jpg"));
     }
+}
+
+void MainWindow::_two_clicked(){
+    QString res = "";
+    if(_two[0]->isChecked()){
+        res += "1";
+    }
+    if(_two[1]->isChecked()){
+        res += "2";
+    }
+    if(_two[2]->isChecked()){
+        res += "3";
+    }
+    if(_two[3]->isChecked()){
+        res += "4";
+    }
+    _two_res->setText(res);
 }
 
 MainWindow::~MainWindow(){

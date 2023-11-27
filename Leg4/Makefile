@@ -1182,6 +1182,8 @@ moc_MainWindow.cpp: include/MainWindow.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QRadioButton \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qradiobutton.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QCheckBox \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qcheckbox.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QButtonGroup \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QLabel \
@@ -1376,6 +1378,8 @@ MainWindow.o: src/MainWindow.cpp include/MainWindow.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QRadioButton \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qradiobutton.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QCheckBox \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qcheckbox.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QButtonGroup \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QLabel \
@@ -1574,6 +1578,8 @@ main.o: src/main.cpp /QT/6.5.3/gcc_64/include/QtWidgets/QApplication \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QRadioButton \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qradiobutton.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QCheckBox \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qcheckbox.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QButtonGroup \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/QLabel \
