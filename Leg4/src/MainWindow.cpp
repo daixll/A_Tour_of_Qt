@@ -1,4 +1,4 @@
-#include "include/MainWindow.h"
+#include "../include/MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,8 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     _one_res        = new QLabel();
     // 复选
     _vLayout2       = new QVBoxLayout();
+    _two            = new QCheckBox[4];
     _two_group      = new QButtonGroup();
     _two_res        = new QLabel();
+
 
     setWindowTitle("Leg4 选择控件");
     setCentralWidget(_centralWidget);
@@ -52,17 +54,19 @@ MainWindow::MainWindow(QWidget *parent)
     _gLayout->addWidget(_two_res, 1, 1);
     _gLayout->setAlignment(_two_res, Qt::AlignCenter);
 
+    // 设置为不互斥
+    _two_group->setExclusive(false);
+
     for(int i = 0; i < 4; i++){
-        _two[i] = new QCheckBox();      // 创建复选按钮
-        _vLayout2->addWidget(_two[i]);  // 将复选按钮添加到垂直布局
-        _two_group->addButton(_two[i]); // 将复选按钮添加到复选按钮组
+        _vLayout2->addWidget(&_two[i]); // 将复选按钮添加到垂直布局
+        _two_group->addButton(&_two[i]);// 将复选按钮添加到复选按钮组
     }
 
     // 设置复选按钮的文本
-    _two[0]->setText("披萨");
-    _two[1]->setText("汉堡");
-    _two[2]->setText("薯条");
-    _two[3]->setText("热狗");
+    _two[0].setText("披萨");
+    _two[1].setText("汉堡");
+    _two[2].setText("薯条");
+    _two[3].setText("热狗");
 
     // 设置复选按钮组的选择结果
     connect(_two_group, &QButtonGroup::buttonClicked, this, &MainWindow::_two_clicked);
@@ -80,17 +84,17 @@ void MainWindow::_one_clicked(){
 
 void MainWindow::_two_clicked(){
     QString res = "";
-    if(_two[0]->isChecked()){
-        res += "1";
+    if(_two[0].isChecked()){
+        res += "披萨 ";
     }
-    if(_two[1]->isChecked()){
-        res += "2";
+    if(_two[1].isChecked()){
+        res += "汉堡 ";
     }
-    if(_two[2]->isChecked()){
-        res += "3";
+    if(_two[2].isChecked()){
+        res += "薯条 ";
     }
-    if(_two[3]->isChecked()){
-        res += "4";
+    if(_two[3].isChecked()){
+        res += "热狗 ";
     }
     _two_res->setText(res);
 }
@@ -104,4 +108,9 @@ MainWindow::~MainWindow(){
     delete _one_C;
     delete _one_group;
     delete _one_res;
+
+    delete _vLayout2;
+    delete _two_group;
+    delete _two_res;
+    delete []_two;
 }

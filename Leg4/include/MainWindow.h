@@ -17,6 +17,7 @@ private:
     QWidget         *_centralWidget;
     QGridLayout     *_gLayout;          // 网格布局
 
+    // 单选
     QVBoxLayout     *_vLayout;          // 垂直布局
 
     QButtonGroup    *_one_group;        // 单选按钮组
@@ -27,11 +28,11 @@ private:
     QLabel          *_one_res;          // 存放单选选择结果
     void            _one_clicked();     // 单选按钮组的选择结果
 
-
+    // 多选
     QVBoxLayout     *_vLayout2;         // 垂直布局
 
     QButtonGroup    *_two_group;        // 复选按钮组
-    QCheckBox       *_two[4];           // 复选按钮
+    QCheckBox       *_two;              // 复选按钮
 
     QLabel          *_two_res;          // 存放复选选择结果
     void            _two_clicked();     // 复选按钮组的选择结果
