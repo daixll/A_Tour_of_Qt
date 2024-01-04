@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     // 设置按钮的文本
-    _button.setText("搜索");
+    _button.setText("确定");
     
     // 设置按钮的点击事件
     connect(&_button, &QPushButton::clicked, this, [this](){
