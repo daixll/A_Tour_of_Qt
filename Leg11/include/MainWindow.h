@@ -20,6 +20,5 @@ private:
                 _lineEdit_B_X,
                 _lineEdit_B_Y;
 
-protected:
     void paintEvent(QPaintEvent *event);
 };
