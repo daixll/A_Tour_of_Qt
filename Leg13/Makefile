@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = main1.0.0
-DISTDIR = /home/jiao/workspace/A_Tour_of_Qt/Leg11/.tmp/main1.0.0
+DISTDIR = /home/jiao/workspace/A_Tour_of_Qt/Leg12/.tmp/main1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/QT/6.5.3/gcc_64/lib -Wl,-rpath-link,/QT/6.5.3/gcc_64/lib
 LIBS          = $(SUBLIBS) /QT/6.5.3/gcc_64/lib/libQt6Widgets.so /QT/6.5.3/gcc_64/lib/libQt6Gui.so /QT/6.5.3/gcc_64/lib/libQt6Core.so -lpthread -lGL   
@@ -1171,9 +1171,13 @@ moc_MainWindow.cpp: include/MainWindow.h \
 		/QT/6.5.3/gcc_64/include/QtGui/QTransform \
 		/QT/6.5.3/gcc_64/include/QtCore/qnativeinterface.h \
 		/QT/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QWidget \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QMenuBar \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qmenubar.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qmenu.h \
 		moc_predefs.h \
 		/QT/6.5.3/gcc_64/libexec/moc
-	/QT/6.5.3/gcc_64/libexec/moc $(DEFINES) --include /home/jiao/workspace/A_Tour_of_Qt/Leg11/moc_predefs.h -I/QT/6.5.3/gcc_64/mkspecs/linux-g++ -I/home/jiao/workspace/A_Tour_of_Qt/Leg11 -I/QT/6.5.3/gcc_64/include -I/QT/6.5.3/gcc_64/include/QtWidgets -I/QT/6.5.3/gcc_64/include/QtGui -I/QT/6.5.3/gcc_64/include/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/MainWindow.h -o moc_MainWindow.cpp
+	/QT/6.5.3/gcc_64/libexec/moc $(DEFINES) --include /home/jiao/workspace/A_Tour_of_Qt/Leg12/moc_predefs.h -I/QT/6.5.3/gcc_64/mkspecs/linux-g++ -I/home/jiao/workspace/A_Tour_of_Qt/Leg12 -I/QT/6.5.3/gcc_64/include -I/QT/6.5.3/gcc_64/include/QtWidgets -I/QT/6.5.3/gcc_64/include/QtGui -I/QT/6.5.3/gcc_64/include/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/MainWindow.h -o moc_MainWindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1349,7 +1353,11 @@ MainWindow.o: src/MainWindow.cpp include/MainWindow.h \
 		/QT/6.5.3/gcc_64/include/QtCore/QSizeF \
 		/QT/6.5.3/gcc_64/include/QtGui/QTransform \
 		/QT/6.5.3/gcc_64/include/QtCore/qnativeinterface.h \
-		/QT/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h
+		/QT/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QWidget \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QMenuBar \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qmenubar.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o src/MainWindow.cpp
 
 main.o: src/main.cpp /QT/6.5.3/gcc_64/include/QtWidgets/QApplication \
@@ -1532,7 +1540,11 @@ main.o: src/main.cpp /QT/6.5.3/gcc_64/include/QtWidgets/QApplication \
 		/QT/6.5.3/gcc_64/include/QtCore/QSize \
 		/QT/6.5.3/gcc_64/include/QtCore/QSizeF \
 		/QT/6.5.3/gcc_64/include/QtGui/QTransform \
-		/QT/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h
+		/QT/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QWidget \
+		/QT/6.5.3/gcc_64/include/QtWidgets/QMenuBar \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qmenubar.h \
+		/QT/6.5.3/gcc_64/include/QtWidgets/qmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o src/main.cpp
 
 moc_MainWindow.o: moc_MainWindow.cpp 
