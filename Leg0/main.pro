@@ -3,8 +3,8 @@ QT += widgets
 CONFIG += debug
 
 HEADERS += \
-    HEADERS/MainWindow.h
+    Headers/MainWindow.h
 
 SOURCES += \
-    SOURCES/MainWindow.cpp \
-    SOURCES/main.cpp
+    Sources/MainWindow.cpp \
+    Sources/main.cpp
