@@ -57,7 +57,7 @@ int main(){
             // 客户端设置为非阻塞
             fcntl(client, F_SETFL, O_NONBLOCK);
 
-            // 发送欢迎信息
+            // 发送 id
             std::string msg = std::to_string(client) + "\0";
             send(client, msg.c_str(), msg.size(), 0);
         }
@@ -73,6 +73,17 @@ int main(){
                 close(c);
                 cs.erase(c);
                 break;
+            }
+
+            // 发送在线数据给目标主机
+            if(buf[0] == '0'){
+                std::string online = "0";
+                for(auto cc : cs)
+                    online += std::to_string(cc) + " ";
+                online += "\0";
+                std::cerr << online << std::endl;
+                send(c, online.c_str(), online.size(), 0);
+                continue;
             }
 
             // 发送数据

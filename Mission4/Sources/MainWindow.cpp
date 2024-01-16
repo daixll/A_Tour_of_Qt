@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     _send.setStyleSheet("background-color: rgb(255, 0, 0);");
 
     // test
+    /*
     _friendList.addItem("5");           // 假设有一个好友 5
     _chatRecord[5] = new QTextEdit();
     _chatRecord[5] -> setReadOnly(true);
@@ -33,6 +34,12 @@ MainWindow::MainWindow(QWidget *parent)
     _chatRecord[4] = new QTextEdit();
     _chatRecord[4] -> setReadOnly(true);
     _sw.addWidget(_chatRecord[4]);
+    */
+
+    _friendList.addItem("0");           // 与服务器通话的界面
+    _chatRecord[0] = new QTextEdit();
+    _chatRecord[0] -> setReadOnly(true);
+    _sw.addWidget(_chatRecord[0]);
 
     // 当点击好友时
     connect(&_friendList, &QListWidget::itemClicked, this, [&](QListWidgetItem* item){ 
@@ -56,7 +63,29 @@ MainWindow::MainWindow(QWidget *parent)
         std::string msg = c.recvMsg();
         if(msg == "") return ;  // 如果没有消息，直接返回
         int id = msg[0] - '0';  // 获取好友 id
-        qDebug() << id;
+        
+        if(id == 0){    // 更新好友列表
+            int i=0;    // 从第一个字符开始
+            int one=0;  // 一个好友的 id
+            qDebug() << QString::fromStdString(msg);
+            while(++i < (int)msg.size()){
+                if(msg[i] == ' '){
+                    if(_chatRecord.count(one) == 0 && one != c.getid()){    // 如果没有这个好友
+                        _friendList.addItem(QString::number(one));  // 添加好友
+                        _chatRecord[one] = new QTextEdit();         // 添加聊天记录
+                        _chatRecord[one] -> setReadOnly(true);
+                        _sw.addWidget(_chatRecord[one]);
+                    }
+                    one = 0;
+                }else{
+                    one *= 10;
+                    one += msg[i] - '0';
+                }
+            }
+
+            return ;
+        }
+
         _chatRecord[id] -> append(QString::number(id) + "：" + QString::fromStdString(msg.substr(1)));
     });
 }
